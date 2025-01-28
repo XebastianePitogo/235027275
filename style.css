@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:wght@400;500&display=swap');
 
+.section {
+    height: 100%;
+    min-height: 100vh;
+}
+
 .textTitle {
     font-family: "Ubuntu", serif;
     color: #F4F4F4;
@@ -19,12 +24,13 @@
     font-weight: 400;
     color: #F4F4F4;
     font-size: 1.5vw;
+    text-align: center;
 }
 
 .background--custom {
     background-color: #170F38;
     width: 100vw;
-    height: 100vh;
+    height: 400vh;
     position: absolute;
     overflow: hidden;
     z-index: -2;
@@ -34,18 +40,19 @@
   canvas#canvas {
     z-index: -1;
     position: absolute;
-    width: 100%;
+    width: 300%;
     height: 100%;
     transform: rotate(0deg) scale(2.3)translateY(0%);
-    --gradient-color-1: #10051c; 
-    --gradient-color-2: #092736; 
-    --gradient-color-3: #2f0727;  
-    --gradient-color-4: #1b003c;
+    --gradient-color-1: #090211; 
+    --gradient-color-2: #020b46; 
+    --gradient-color-3: #3b0830;  
+    --gradient-color-4: #280257;
     --gradient-speed: 0.000008;
   }
 
 .homeContainer {
     display: flex;
+    box-sizing: border-box;
 }
 
 .homeBottomContainer {
@@ -67,7 +74,7 @@
     font-size: 2.5vw;
 }
 
-#homePicture, #textName {
+#homePicture, #textName, #textHobby {
     display: flex;
     justify-content: center;
 }
@@ -84,4 +91,38 @@
 
 #textHomeName {
     text-align: justify;
+}
+
+#hobbiesContainer {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hobbiesImage {
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 1;
+    height: 400px; 
+    width: 400px;
+    max-width: 20vw;
+    max-height: 40vh;
+    border-radius: 50px;
+    box-shadow:
+    0 0 2px rgba(0, 0, 0, 0.8),
+    0 0 10px #170F38, 
+    0 0 15px rgba(255, 88, 88, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.2);
+    transition: box-shadow 0.3s ease; 
+}
+.hobbiesImage:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 
+                0 0 20px rgba(255, 255, 255, 0.5), 
+                0 0 30px rgb(101, 0, 242);
+}
+
+#hobbies > figure {
+    margin: 10px 0;
+    text-align: center;
 }
