@@ -54,7 +54,7 @@ nav a {
 }
 
 .hero {
-    background-image: url(assets/heroBg1.jpg);
+    background-image: url(assets/heroBg1.webp);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -105,8 +105,20 @@ section {
 
 #about {
     height: 100vh;
-    background-image: url(assets/aboutImage.png);
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 94, 0, 0)),
+        url(assets/aboutImage.webp);
     background-size: cover;
+    background-position: center;
+}
+
+#servicesandContact {
+    backdrop-filter: blur(20px);
+    height: 100vh;
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 94, 0, 0.1)),
+        url(assets/contactImage.webp);
+    background-size: fill;
     background-position: center;
 }
 
@@ -122,13 +134,70 @@ section {
 
 .service {
     flex: 1;
-    margin:  20px;
-    min-width: 250px;
-    max-width: 300px;
+    margin: 10px;
+    min-width: 200px;
+    max-width: 400px;
     background: #f4f4f4;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+input,
+textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        margin: 10px 0;
+    }
+
+    .hero {
+        height: 70vh;
+    }
+
+    #textHeroHeader {
+        font-size: 10vh;
+    }
+
+    #textHero {
+        font-size: 5vh;
+    }
+
+    #contact {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
+    }
 }
 
 footer {
@@ -137,29 +206,3 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    .services-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .service {
-        margin: 10px 0;
-    }
-    .hero {
-        height: 70vh;
-    }
-    #textHeroHeader {
-        font-size: 10vh;
-    }
-    #textHero {
-        font-size: 5vh;
-    }
-    .start-button {
-        font-size: 5vh;
-    }
-} 
